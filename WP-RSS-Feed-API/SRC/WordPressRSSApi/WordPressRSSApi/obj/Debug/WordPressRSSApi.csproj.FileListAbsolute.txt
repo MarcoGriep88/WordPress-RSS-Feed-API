@@ -1,0 +1,5 @@
+D:\Softwareprojekte\WordPressRSSApi\WordPressRSSApi\bin\Debug\WordPressRSSApi.dll
+D:\Softwareprojekte\WordPressRSSApi\WordPressRSSApi\bin\Debug\WordPressRSSApi.pdb
+D:\Softwareprojekte\WordPressRSSApi\WordPressRSSApi\obj\Debug\WordPressRSSApi.csproj.CoreCompileInputs.cache
+D:\Softwareprojekte\WordPressRSSApi\WordPressRSSApi\obj\Debug\WordPressRSSApi.dll
+D:\Softwareprojekte\WordPressRSSApi\WordPressRSSApi\obj\Debug\WordPressRSSApi.pdb
