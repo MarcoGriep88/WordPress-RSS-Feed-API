@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Wordpress RSS Feed API</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">WP-RSS-Feed-API</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="docs.html">Docs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="download.html">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="donate.html">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>WP RSS Feed - API</h1>
+              <span class="subheading">A simple way to grab your Wordpress RSS Feed with .Net</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-preview">
+            <a href="docs.html">
+              <h2 class="post-title">
+                Keep it simple but effective
+              </h2>
+              <h3 class="post-subtitle">
+                Get your RSS Feed with a few lines of C# Code
+              </h3>
+            </a>
+            <pre>
+                  <code class="cs">
+                    //Get an Instance of Wordpress Controller (Singleton)
+                    WordPressFeedController wp = WordPressFeedController.Instance;
+
+                    //Load all the RSS Articles
+                    wp.LoadRSS("http://www.its-all-about.de/rss");
+
+                    //Get the Newest Article (Check Docs for other functions)
+                    var rssItem = wp.GetNewestItem();
+
+                    this.label1.Text = rssItem.Title;
+
+                    //Text Only, Remove all the HTML Tags - Limit too 300 Chars
+                    this.richTextBox1.Text = wp.RemoveHTMLFromText(rssItem.Summary.Substring(0, 300)) + "...";
+
+                    //Open RSS Article on Button Click
+                    this.button1.Click += (s, e) => {
+                        Process.Start(rssItem.Id);
+                    };
+                  </code>
+                </pre>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="docs.html">
+              <h2 class="post-title">
+                Pre-defined functions to query your articles
+              </h2>
+            </a>
+            <ul>
+              <li>Get all articles</li>
+              <li>Get an random article</li>
+              <li>Get first article in RSS Feed</li>
+              <li>Get last article in RSS Feed</li>
+              <li>Get newest (by date) article in RSS Feed</li>
+              <li>Get oldest (by date) article in RSS Feed</li>
+              <li>Get list of articles that contains a specific text</li>
+              <li>Get list of articles that contains a specific text in title</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="docs.html">
+              <h2 class="post-title">
+                MIT-License - improve and share this project
+              </h2>
+              <h3 class="post-subtitle">
+                I want you to use and improve this library. Give back your improvements
+                on our Git Repository - so others can benefit from.
+              </h3>
+              <h4>Want to support this project? Please donate and help to push this project forward</h4>
+            </a>
+          </div>
+          <hr>
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="download.html">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Website-Reponsive -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3706327998499959"
+        data-ad-slot="5439105821"
+        data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <hr>
+    
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <li class="list-inline-item">
+                <a href="impressum.html">
+                  Impressum
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="privacypolicy.html">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Griep Marco 2018 - <a href="http://www.marcogriep.de" target="_blank">www.marcogriep.de</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+  </script>
+
+  <style>
+/*
+Qt Creator light color scheme
+*/
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #ffffff;
+}
+
+.hljs,
+.hljs-subst,
+.hljs-tag,
+.hljs-title {
+  color: #000000;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #000000;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal {
+  color: #000080;
+}
+
+.hljs-code
+.hljs-selector-class {
+  color: #800080;
+}
+
+.hljs-emphasis,
+.hljs-stronge,
+.hljs-type {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-function,
+.hljs-section,
+.hljs-symbol,
+.hljs-name {
+  color: #808000;
+}
+
+.hljs-attribute {
+  color: #800000;
+}
+
+.hljs-variable,
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #0055AF;
+}
+
+.hljs-string,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-template-tag,
+.hljs-template-variable,
+.hljs-addition,
+.hljs-link {
+  color: #008000;
+}
+
+.hljs-comment,
+.hljs-meta,
+.hljs-deletion {
+  color: #008000;
+}
+  </style>
+
+  <style>
+    pre, code {
+      font-size: 12px;
+      padding-left: 0px;
+      margin-left: -60px;
+    }
+  </style>
+  </body>
+
+</html>
